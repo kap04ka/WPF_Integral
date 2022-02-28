@@ -24,5 +24,15 @@ namespace WPF_Integral
         {
             InitializeComponent();
         }
+
+        private void Calc(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("\tInput:\nStart: "+start.Text+";\nEnd: "+end.Text+";\nSteps: "+steps.Text+";\nMethod: "+method.Text+".", "Info",MessageBoxButton.OK,MessageBoxImage.Asterisk);
+        }
+
+        private void DrawGraph(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Component is unfinished!", "Unavailable", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        }
     }
 }
