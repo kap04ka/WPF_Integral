@@ -14,9 +14,9 @@ namespace WPF_Integral.Classes
             double sum = 0;
             for (int i = 1; i <= steps; i++) // <= ?
             {
-                sum += h*func(start + h * i - 0.5*h);
+                sum += func(start + h * i - 0.5*h);
             }
-            return sum;
+            return sum * h;
         }
     }
 }
