@@ -61,8 +61,9 @@ namespace WPF_Integral
         {
             PlotModel plotModel = new PlotModel()
             {
-                Title = "7x - ln(7x) + 8"
+                Title = "7x - ln(7x) + 8",
             };
+
             LineSeries Series = new LineSeries();
 
             int MaxGragphSteps = 10000;
@@ -73,7 +74,7 @@ namespace WPF_Integral
             for (int i = 0; i < MaxGragphSteps; i++)
             {
                 double t = 0;
-                double result = calc.Calculate(i, xStart, xEnd, x => (32 * x) - Math.Log(2 * x) - 41, out t);
+                double result = calc.Calculate(i, xStart, xEnd, x => (7*x - Math.Log(7*x)+8), out t);
                 Series.Points.Add(new DataPoint(i, t));
             }
 
