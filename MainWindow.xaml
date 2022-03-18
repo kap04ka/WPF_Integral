@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Integral"
+        xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
         Title="Belyaev Sergey 3-46" Height="600" Width="800">
     <Grid>
@@ -43,6 +44,6 @@
         </ComboBox>
         <Button Grid.Row="5" Grid.Column="1" Margin="10 10" Grid.ColumnSpan="2" VerticalAlignment="Top" Content="Рассчитать" Click="Calc"></Button>
         <Button Grid.Row="5" Grid.Column="3" Margin="10 10" VerticalAlignment="Top" Content="Отрисовать график" Click="DrawGraph"></Button>
-        <!--<Image Grid.Row="1" Grid.Column="3" Margin="10 10" Grid.RowSpan="4" Height="300"></Image>-->
+        <oxy:PlotView Grid.Row="1" Grid.Column="3" Margin="10 10" Grid.RowSpan="4" Height="300" x:Name="Graphics"/>
     </Grid>
 </Window>

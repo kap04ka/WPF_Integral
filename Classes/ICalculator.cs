@@ -8,6 +8,6 @@ namespace WPF_Integral.Classes
 {
     interface ICalculator
     {
-        public double Calculate(double steps, double start, double end, Func<double,double> func);
+        public double Calculate(double steps, double start, double end, Func<double, double> func, out double t);
     }
 }
