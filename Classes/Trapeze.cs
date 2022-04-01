@@ -7,10 +7,20 @@ using System.Diagnostics;
 
 namespace WPF_Integral.Classes
 {
-    class Trapeze : ICalculator
+    public class Trapeze : ICalculator
     {
         public double Calculate(double steps, double start, double end, Func<double, double> func, out double t)
         {
+            if (steps <= 0) throw new ArgumentException("Incorrect input (steps must be >=1)");
+            bool messedLims = false;
+            if (start > end)
+            {
+                messedLims = true;
+                double tmp = start;
+                start = end;
+                end = tmp;
+            }
+
             Stopwatch sw = new Stopwatch();
 
             double h = (end - start) / steps;
@@ -28,6 +38,7 @@ namespace WPF_Integral.Classes
             TimeSpan time = sw.Elapsed;
             t = time.TotalMilliseconds;
 
+            if (messedLims) sum *= -1.0;
             return sum;
         }
     }
