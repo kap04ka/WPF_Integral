@@ -8,6 +8,7 @@ namespace WPF_Integral.Classes
 {
     public interface ICalculator
     {
-        public double Calculate(double steps, double start, double end, Func<double, double> func, out double t);
+        // For parallel steps need be int
+        public double Calculate(int steps, double start, double end, Func<double, double> func, out double t);
     }
 }
